@@ -20,7 +20,7 @@ void readability(string text)
     int sentences = 0;
 
     // Verifica todos os caracteres do texto recebido
-    for (int i = 0, lenght = strlen(text); i < lenght; i++)
+    for (int i = 0, length = strlen(text); i < length; i++)
     {
         // Verifica se o caractere é uma letra ou número
         if (isalnum(text[i]))
