@@ -6,27 +6,27 @@
 
 int main(int argc, string argv[])
 {
-    // Verifica se foi passado a KEY como parâmetro
+    // Check if the KEY was passed as a parameter
     if (argc != 2)
     {
         printf("Usage: ./substitution KEY\n");
         return 1;
     }
 
-    // Verifica se a KEY contém 26 caracteres
+    // Checks if the KEY contains 26 characters
     if (strlen(argv[1]) != 26)
     {
         printf("Key must contain 26 characters.\n");
         return 1;
     }
 
-    // Verifica a KEY
+    // Check the KEY
     char duplicates[26] = {};
     for (int i = 0, l = strlen(argv[1]); i < l; i++)
     {
         for (int s = 0; s < 26; s++)
         {
-            // Verifica se o caracter é repetido
+            // Checks if the character is repeated
             if (argv[1][i] == duplicates[s])
             {
                 printf("Usage: ./substitution KEY\n");
@@ -35,7 +35,7 @@ int main(int argc, string argv[])
         }
         duplicates[i] = argv[1][i];
 
-        // Verificas se o caracter é um digitou ou é um espaço
+        // Checks if the character is a digit or is a space
         if (isdigit(argv[1][i]) || isspace(argv[1][i]))
         {
             printf("Usage: ./substitution KEY\n");
@@ -43,10 +43,10 @@ int main(int argc, string argv[])
         }
     }
 
-    // Pede entrada ao usuário
+    // Ask the user for input
     string plaintext = get_string("plaintext:  ");
 
-    // Exibe o resultado
+    // Show the result
     printf("ciphertext: ");
 
     for (int i = 0, l = strlen(plaintext); i < l; i++)
