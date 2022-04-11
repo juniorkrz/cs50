@@ -6,12 +6,14 @@
 
 int main(int argc, string argv[])
 {
+    // Incorrect use
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
 
+    // Get key from argv
     for (int i = 0, l = strlen(argv[1]); i < l; i++)
     {
         if (isdigit(argv[1][i]) == false)
@@ -23,10 +25,12 @@ int main(int argc, string argv[])
 
     int key = atoi(argv[1]);
 
+    // Ask user for the plain text
     string plaintext = get_string("plaintext:  ");
 
     printf("ciphertext: ");
 
+    // Transforms plain text in cipher text and show results
     for (int i = 0, l = strlen(plaintext); i < l; i++)
     {
         if (isalpha(plaintext[i]))
